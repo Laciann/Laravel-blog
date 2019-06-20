@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function create(){
-        return view('home');
-    }
-
-    public function store(){
-       $title = request('title');
-       echo $title;
-    }
+public function index(){
+    return User::all();
+}
 }
