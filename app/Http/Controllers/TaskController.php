@@ -11,6 +11,7 @@ class TaskController extends Controller
     }
 
     public function store(){
-        return view('home');
+       $title = request('title');
+       echo $title;
     }
 }

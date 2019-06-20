@@ -21,5 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('jobs')->group(function(){
   Route::get('create', 'TaskController@create');
-  Route::post('create', 'TaskController@store');
+  Route::post('create', 'TaskController@store')->name('jobs.store');
 });
