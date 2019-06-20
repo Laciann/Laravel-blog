@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user', 'TaskController@index');
+Route::get('/user/{id}', 'TaskController@index');
