@@ -1,3 +1,1 @@
-**Scaffolding**
-
-php artisan make:auth
+REST API built using laravel 
