@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Update Contacts</div>
-            <form action="{{route('contact.store')}}" method="post">
+            <form action="{{route('contact.store',[$contact->id])}}" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">

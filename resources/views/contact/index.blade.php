@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Contacts</div>
-                <form action="{{route('contact.store')}}" method="post">
+
                     @csrf
                     <div class="card-body">
 
@@ -33,7 +33,6 @@
                             </tbody>
                         </table>
                     </div>
-                </form>
             </div>
         </div>
     </div>
