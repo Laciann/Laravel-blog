@@ -34,7 +34,12 @@ class ApiContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = new Contact();
+        $contact->name = request('name');
+        $contact->address = request('address');
+        $contact->phone = request('phone');
+        $contact->save();
+        return response()->json($contact);
     }
 
     /**
