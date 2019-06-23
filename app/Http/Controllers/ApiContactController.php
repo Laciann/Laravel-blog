@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
+use Validator;
 
 class ApiContactController extends Controller
 {
@@ -35,6 +36,12 @@ class ApiContactController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = ['name'=>'required', 'address'=>'required','phone'=>'required|min:10|numeric'];
+        $validator = Validator::make($request->all(),$rules);
+        if($validator->fails()){
+            return response()->json($validator->errors(),400 );
+        }
+
         $contact = new Contact();
         $contact->name = request('name');
         $contact->address = request('address');
@@ -49,9 +56,15 @@ class ApiContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id){
+
+        $contact = Contact::find($id);
+
+            if(!$contact){
+            return response()->json(['message'=>'data not found'],404);
+            }
+
+        return response()->json($contact);
     }
 
     /**
@@ -74,7 +87,12 @@ class ApiContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        $contact->name = request('name');
+        $contact->address = request('address');
+        $contact->phone = request('phone');
+        $contact->save();
+        return response()->json($contact);
     }
 
     /**
@@ -85,6 +103,8 @@ class ApiContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return response()->json($contact);
     }
 }
