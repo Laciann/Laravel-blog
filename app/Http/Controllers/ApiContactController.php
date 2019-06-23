@@ -13,7 +13,8 @@ class ApiContactController extends Controller
      */
     public function index()
     {
-
+        $contact = Contact::all();
+        return response()->json($contact);
     }
 
     /**

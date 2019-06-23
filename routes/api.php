@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/contacts', 'ApiContactController@store');
-Route::get('/contacts', 'ApiContactController@store');
+Route::get('/contacts', 'ApiContactController@index');
+Route::get('/contacts/{id}', 'ApiContactController@index');
+
