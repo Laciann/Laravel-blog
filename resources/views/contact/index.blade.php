@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Contacts</div>
-            <form action="{{route('contact.store')}}" method="post">
+                <form action="{{route('contact.store')}}" method="post">
                     @csrf
                     <div class="card-body">
 
@@ -19,14 +19,16 @@
                             </thead>
                             <tbody>
                                 @foreach ($contacts as $contact)
-                                    <tr>
+                                <tr>
                                     <td>{{$contact->name}}</td>
                                     <td>{{$contact->phone}}</td>
                                     <td>{{$contact->address}}</td>
-                                    <td><button class="btn btn-info">edit</button>
-                                    <button class="btn btn-success">view</button>
+                                    <td>
+                                        <a href="{{route('contact.edit', [$contact->id])}}"> <button class="btn btn-info">edit</button></a>
+
+                                        <a href="http://"><button class="btn btn-success">view</button></a>
                                     </td>
-                                    </tr>
+                                </tr>
                                 @endforeach
                             </tbody>
                         </table>

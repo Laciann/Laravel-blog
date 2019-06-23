@@ -26,6 +26,7 @@ class ContactController extends Controller
     }
 
     public function edit($id){
-        return view('contact.edit');
+        $contact = Contact::findOrFail($id);
+        return view('contact.edit', compact('contact'));
     }
 }

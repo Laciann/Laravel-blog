@@ -25,5 +25,5 @@ Route::get('/user/{id}', 'TaskController@index');
 Route::get('/contacts', 'ContactController@index');
 Route::get('/contact/create', 'ContactController@create');
 Route::post('/contacts', 'ContactController@store')->name('contact.store');
-Route::get('/contact/{id}/edit', 'ContactController@create');
+Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 
