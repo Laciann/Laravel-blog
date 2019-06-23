@@ -23,7 +23,7 @@ Route::get('/user/{id}', 'TaskController@index');
 
 
 Route::get('/contacts', 'ContactController@index')->name('contact.index');
-Route::get('/contact/create', 'ContactController@create');
+Route::get('/contact/create', 'ContactController@create')->name('contact.create');
 Route::post('/contacts', 'ContactController@store')->name('contact.store');
 Route::get('/contact/{id}/edit', 'ContactController@edit')->name('contact.edit');
 Route::post('contacts/{id}/store','ContactController@update')->name('contact.update');

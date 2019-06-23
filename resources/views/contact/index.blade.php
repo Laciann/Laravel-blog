@@ -6,8 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Contacts</div>
-
-                @csrf
+                <span class="float-right">
+                <a href="{{route('contact.create')}}">Create Contact</a>
+                </span>
                 <div class="card-body">
 
                     <table class="table table-striped">
