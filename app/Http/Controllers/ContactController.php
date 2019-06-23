@@ -43,4 +43,10 @@ class ContactController extends Controller
         $contact = Contact::findOrFail($id);
         return view('contact.show',compact('contact') );
     }
+
+    public function destroy($id){
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return redirect()->to('/contacts');
+    }
 }
