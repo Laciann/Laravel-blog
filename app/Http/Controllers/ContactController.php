@@ -38,4 +38,9 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->to('/contacts');
     }
+
+    public function show($id){
+        $contact = Contact::findOrFail($id);
+        return view('contact.show',compact('contact') );
+    }
 }

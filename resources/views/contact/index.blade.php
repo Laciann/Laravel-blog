@@ -26,7 +26,7 @@
                                     <td>
                                         <a href="{{route('contact.edit', [$contact->id])}}"> <button class="btn btn-info">edit</button></a>
 
-                                        <a href="http://"><button class="btn btn-success">view</button></a>
+                                    <a href="{{}}"><button class="btn btn-success">view</button></a>
                                     </td>
                                 </tr>
                                 @endforeach
