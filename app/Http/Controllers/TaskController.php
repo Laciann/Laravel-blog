@@ -12,3 +12,6 @@ public function index(User $id){
     dd($id);
 }
 }
+
+
+Route::get('/contacts', 'ContactController@create');

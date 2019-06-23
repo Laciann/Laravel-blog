@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user/{id}', 'TaskController@index');
+
+
+Route::get('/contacts', 'ContactController@index');
+Route::get('/contact/create', 'ContactController@create');
+
+
+Route::post('/contacts', 'ContactController@store')->name('contact.store');
+
